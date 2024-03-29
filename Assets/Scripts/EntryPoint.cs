@@ -14,6 +14,7 @@ public class EntryPoint : MonoBehaviour
     private RewardController _rewardController;
     [SerializeField] private Config _config;
 
+    [SerializeField] private TextMeshProUGUI _exception;
     [SerializeField] private PanelUpgraded _panelUpgraded;
     [SerializeField] private FieldMergeController _fieldMergeController;
     [SerializeField] private BattleFieldView _battleFieldView;
@@ -60,30 +61,37 @@ public class EntryPoint : MonoBehaviour
 
     private void Awake()
     {
-        _startTimeSpeed = _timeSpeed;
-           _seconds = 0;
-        _buttonSpawn.onClick.AddListener(SpawnHero);
-        _buttonGetRandomReward.onClick.AddListener(PickUpRandomReward);
-        _cellUpgrade.onClick.AddListener(OpenUpgrades);
-        _buttonReset.onClick.AddListener(OnReset);
-        Instance = this;
+        try
+        {
+            _startTimeSpeed = _timeSpeed;
+            _seconds = 0;
+            _buttonSpawn.onClick.AddListener(SpawnHero);
+            _buttonGetRandomReward.onClick.AddListener(PickUpRandomReward);
+            _cellUpgrade.onClick.AddListener(OpenUpgrades);
+            _buttonReset.onClick.AddListener(OnReset);
+            Instance = this;
 
-        _playerData = new(_config, UpdateBalance, UpdateSpawnField,
-            UpdateDungeonField, UpdateLabelSpawn);
-        _playerData.IsPremium = _PremiumEnable;
-        _dungeon = new (_config);
-        _rewardController = new(_config, _playerData, 
-            ShowRandomReward, ClosePanelRandomReward, EndADSTimer);
+            _playerData = new(_config, UpdateBalance, UpdateSpawnField,
+                UpdateDungeonField, UpdateLabelSpawn);
+            _playerData.IsPremium = _PremiumEnable;
+            _dungeon = new(_config);
+            _rewardController = new(_config, _playerData,
+                ShowRandomReward, ClosePanelRandomReward, EndADSTimer);
 
-        _rewardController._getRewards += _panelRewards.Show;
-        _battleFieldView.Init(_dungeon, _playerData, _config, _cursor.UpdateCursor, _cursor.HideCursor, _playerData.MoveHero);
-        _fieldMergeController.Init(_cursor.UpdateCursor, _cursor.HideCursor, _playerData.MoveHero);
-        _panelUpgraded.Init(_playerData);
-        _panelADS.Init(_rewardController);
+            _rewardController._getRewards += _panelRewards.Show;
+            _battleFieldView.Init(_dungeon, _playerData, _config, _cursor.UpdateCursor, _cursor.HideCursor, _playerData.MoveHero);
+            _fieldMergeController.Init(_cursor.UpdateCursor, _cursor.HideCursor, _playerData.MoveHero);
+            _panelUpgraded.Init(_playerData);
+            _panelADS.Init(_rewardController);
 
-        _gameProcess = new(_playerData, _dungeon, _rewardController, _config);
+            _gameProcess = new(_playerData, _dungeon, _rewardController, _config);
 
-        UpdateLabelSpawn(_playerData.CurrentMinimalHeroLevel);
+            UpdateLabelSpawn(_playerData.CurrentMinimalHeroLevel);
+        }
+        catch (Exception ex)
+        {
+            _exception.text = ex.Message + "!@#\r\n" + ex.StackTrace;
+        }
     }
 
     private void Update()

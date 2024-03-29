@@ -90,11 +90,11 @@ public class PlayerData : ScriptableObject
 
         for (int c = 1; c <= CellsForSpawn; c++)
         {
-            HeroesDatas.Add(new HeroData(0, 1));
+            HeroesDatas.Add(new HeroData(0, 0));
         }
         for (int c = 1; c <= CellsInDungeon; c++)
         {
-            HeroesInDungeon.Add(new HeroData(0, 1));
+            HeroesInDungeon.Add(new HeroData(0, 0));
         }
 
         _goldsUpdate?.Invoke(_golds);

@@ -21,8 +21,8 @@ public class AutoGridLayoutGroup : MonoBehaviour
     [SerializeField] float height;
     [SerializeField] Rect testR;
 
-    private GridLayoutGroup _gridLayoutGroup;
-    private RectTransform _rectTransform;
+    [SerializeField] private GridLayoutGroup _gridLayoutGroup;
+    [SerializeField] private RectTransform _rectTransform;
 
     private void OnValidate()
     {
