@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99a8280596611d4b9135b7a3b9eaee6, type: 3}
+  m_Name: Config
+  m_EditorClassIdentifier: 
+  startGolds: 100
+  startDiamonds: 0
+  KIncreaseHPMobs: 1.1
+  KIncreaseHPBoss: 20
+  KIncreaseRewardMobs: 0.025
+  KIncreaseRewardBoss: 2
+  KDamageByLevelHero: 1.2
+  KMultipleDamageByClass: 1.5
+  KCostForSpawn: 10
+  KCardsNeed: 1
+  RandomRewards:
+  - IsPremium: 0
+    typeReward: 0
+    Weight: 4
+    From: 80
+    To: 200
+  - IsPremium: 0
+    typeReward: 1
+    Weight: 3
+    From: 5
+    To: 15
+  - IsPremium: 0
+    typeReward: 3
+    Weight: 3
+    From: 3
+    To: 4
+  - IsPremium: 1
+    typeReward: 0
+    Weight: 3
+    From: 500
+    To: 1000
+  - IsPremium: 1
+    typeReward: 1
+    Weight: 3
+    From: 20
+    To: 50
+  - IsPremium: 1
+    typeReward: 3
+    Weight: 5
+    From: 5
+    To: 6
+  _rewardBossChest:
+  - IsPremium: 0
+    typeReward: 1
+    Weight: 3
+    From: 20
+    To: 20
+  - IsPremium: 0
+    typeReward: 2
+    Weight: 3
+    From: 1
+    To: 3
+  - IsPremium: 0
+    typeReward: 2
+    Weight: 3
+    From: 1
+    To: 3
+  - IsPremium: 0
+    typeReward: 2
+    Weight: 3
+    From: 1
+    To: 3
+  - IsPremium: 1
+    typeReward: 1
+    Weight: 3
+    From: 40
+    To: 40
+  - IsPremium: 1
+    typeReward: 2
+    Weight: 3
+    From: 4
+    To: 8
+  - IsPremium: 1
+    typeReward: 2
+    Weight: 3
+    From: 4
+    To: 8
+  - IsPremium: 1
+    typeReward: 2
+    Weight: 3
+    From: 4
+    To: 8
+  RandomPerks:
+  - typePerk: 0
+    Weight: 10
+  - typePerk: 1
+    Weight: 5
+  - typePerk: 2
+    Weight: 2
+  - typePerk: 3
+    Weight: 4
+  - typePerk: 4
+    Weight: 4
+  - typePerk: 5
+    Weight: 4
+  - typePerk: 6
+    Weight: 4
+  - typePerk: 7
+    Weight: 4
+  - typePerk: 8
+    Weight: 4
+  RewardEveryDoneLevels: 8
+  RewardEveryFailLevels: 2
+  RewardEveryDoneLevelsPremium: 2
+  RewardEveryFailLevelsPremium: 1
+  MaxTimeForDoneLevel: 15
+  TimeSpawnMobs: 0.5
+  TimePrepareLevel: 3
+  TimeADS: 20
