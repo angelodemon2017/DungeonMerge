@@ -1370,6 +1370,8 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
+  _gridLayoutGroup: {fileID: 385971156}
+  _rectTransform: {fileID: 385971152}
 --- !u!114 &385971156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3426,7 +3428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1385040335
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4478,7 +4480,7 @@ MonoBehaviour:
   _panelADS: {fileID: 2008208322}
   _panelRewards: {fileID: 736343443}
   _buttonReset: {fileID: 2106223034}
-  _timeSpeed: 1
+  _timeSpeed: 10
   _PremiumEnable: 0
   _autoBot: 0
   _autoUpgrade: 0
@@ -5897,6 +5899,8 @@ MonoBehaviour:
     y: 0
     width: 0
     height: 0
+  _gridLayoutGroup: {fileID: 2036443825}
+  _rectTransform: {fileID: 2036443821}
 --- !u!114 &2036443825
 MonoBehaviour:
   m_ObjectHideFlags: 0
